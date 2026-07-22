@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sucursales | Tienda de Zapatos</title>
-    <link rel="stylesheet" href="../assets/sucursales.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <header>
         <nav>
@@ -18,71 +19,170 @@
         </nav>
     </header>
 
-    <!-- Sección de Sucursales -->
-    <main class="container">
-        <div class="section-header">
-            <h1>Nuestras Sucursales en Quito</h1>
-            <p>Encuéntranos en los principales puntos del Norte, Centro-Norte y Sur de la ciudad.</p>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <header class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            
+
+            <h1 class="text-2xl font-extrabold tracking-tight text-indigo-400 flex items-center gap-2">
+                <i class="fa-solid fa-shoe-prints text-indigo-500"></i>
+                <span>ShoeStyle</span>
+            </h1>
+
+ 
+            <nav class="flex items-center gap-2 md:gap-4 text-sm font-medium">
+                <a href="index.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors duration-200">Inicio</a>
+                <a href="sucursales.html" class="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/30">Sucursales</a>
+                <a href="hombre.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors duration-200">Hombre</a>
+                <a href="mujer.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors duration-200">Mujer</a>
+                <a href="contactos.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors duration-200">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+>
+    <main class="flex-grow max-w-6xl mx-auto px-6 py-10 w-full">
+        
+
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+                Nuestras Sucursales en Quito
+            </h1>
+            <p class="text-slate-600 text-base md:text-lg">
+                Encuéntranos en los principales puntos del Norte, Centro-Norte y Sur de la ciudad.
+            </p>
         </div>
 
-        <div class="stores-grid">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Sucursal Norte: Quicentro -->
-            <article class="store-card">
-                <iframe 
-                    class="map-container"
-                    src="https://maps.google.com/maps?q=Quicentro%20Shopping%20Quito&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                    loading="lazy">
-                </iframe>
-                <div class="store-body">
-                    <h2 class="store-title">Quicentro Shopping (Norte)</h2>
-                    <ul class="store-info">
-                        <li>📍 <strong>Dirección:</strong> Av. Naciones Unidas y Av. 6 de Diciembre (Nivel 2)</li>
-                        <li>🕒 <strong>Horario:</strong> Lun - Sáb: 09:30 - 21:00 | Dom: 10:00 - 20:00</li>
-                        <li>📞 <strong>Teléfono:</strong> (02) 246-4520</li>
-                    </ul>
-                    <a href="https://maps.google.com/?q=Quicentro+Shopping+Quito" target="_blank" class="btn-action">Cómo llegar</a>
+  
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="w-full h-52 bg-slate-100">
+                    <iframe 
+                        class="w-full h-full border-0"
+                        src="https://maps.google.com/maps?q=Quicentro%20Shopping%20Quito&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        loading="lazy"
+                        title="Mapa Quicentro Shopping">
+                    </iframe>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <span>Quicentro Shopping</span>
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-600 rounded-full border border-indigo-100">Norte</span>
+                        </h2>
+                        <ul class="space-y-3 text-sm text-slate-600 mb-6">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-location-dot text-indigo-500 mt-1 shrink-0"></i>
+                                <span><strong>Dirección:</strong> Av. Naciones Unidas y Av. 6 de Diciembre (Nivel 2)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-clock text-indigo-500 mt-1 shrink-0"></i>
+                                <span><strong>Horario:</strong> Lun - Sáb: 09:30 - 21:00 | Dom: 10:00 - 20:00</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-phone text-indigo-500 mt-1 shrink-0"></i>
+                                <span><strong>Teléfono:</strong> (02) 246-4520</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="https://maps.google.com/?q=Quicentro+Shopping+Quito" 
+                       target="_blank" 
+                       class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-slate-900 hover:bg-indigo-600 text-white font-medium text-sm rounded-xl transition-colors duration-200 shadow-sm">
+                        <i class="fa-solid fa-diamond-turn-right"></i>
+                        Cómo llegar
+                    </a>
                 </div>
             </article>
 
-            <!-- Sucursal Centro-Norte: Mall El Jardín -->
-            <article class="store-card">
-                <iframe 
-                    class="map-container"
-                    src="https://maps.google.com/maps?q=Mall%20El%20Jardin%20Quito&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                    loading="lazy">
-                </iframe>
-                <div class="store-body">
-                    <h2 class="store-title">Mall El Jardín (Centro-Norte)</h2>
-                    <ul class="store-info">
-                        <li>📍 <strong>Dirección:</strong> Av. Río Amazonas N16-114 y Av. República</li>
-                        <li>🕒 <strong>Horario:</strong> Lun - Sáb: 10:00 - 20:30 | Dom: 10:00 - 20:00</li>
-                        <li>📞 <strong>Teléfono:</strong> (02) 298-0300</li>
-                    </ul>
-                    <a href="https://maps.google.com/?q=Mall+El+Jardin+Quito" target="_blank" class="btn-action">Cómo llegar</a>
+
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="w-full h-52 bg-slate-100">
+                    <iframe 
+                        class="w-full h-full border-0"
+                        src="https://maps.google.com/maps?q=Mall%20El%20Jardin%20Quito&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        loading="lazy"
+                        title="Mapa Mall El Jardín">
+                    </iframe>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <span>Mall El Jardín</span>
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-600 rounded-full border border-indigo-100">Centro-Norte</span>
+                        </h2>
+                        <ul class="space-y-3 text-sm text-slate-600 mb-6">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-location-dot text-indigo-500 mt-1 shrink-0"></i>
+                                <span><strong>Dirección:</strong> Av. Río Amazonas N16-114 y Av. República</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-clock text-indigo-500 mt-1 shrink-0"></i>
+                                <span><strong>Horario:</strong> Lun - Sáb: 10:00 - 20:30 | Dom: 10:00 - 20:00</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-phone text-indigo-500 mt-1 shrink-0"></i>
+                                <span><strong>Teléfono:</strong> (02) 298-0300</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="https://maps.google.com/?q=Mall+El+Jardin+Quito" 
+                       target="_blank" 
+                       class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-slate-900 hover:bg-indigo-600 text-white font-medium text-sm rounded-xl transition-colors duration-200 shadow-sm">
+                        <i class="fa-solid fa-diamond-turn-right"></i>
+                        Cómo llegar
+                    </a>
                 </div>
             </article>
 
-            <!-- Sucursal Sur: C.C. El Recreo -->
-            <article class="store-card">
-                <iframe 
-                    class="map-container"
-                    src="https://maps.google.com/maps?q=Centro%20Comercial%20El%20Recreo%20Quito&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                    loading="lazy">
-                </iframe>
-                <div class="store-body">
-                    <h2 class="store-title">C.C. El Recreo (Sur)</h2>
-                    <ul class="store-info">
-                        <li>📍 <strong>Dirección:</strong> Av. Pedro Vicente Maldonado S11-122 (Acceso Metro)</li>
-                        <li>🕒 <strong>Horario:</strong> Lun - Dom: 10:00 - 20:00</li>
-                        <li>📞 <strong>Teléfono:</strong> (02) 265-1555</li>
-                    </ul>
-                    <a href="https://maps.google.com/?q=Centro+Comercial+El+Recreo+Quito" target="_blank" class="btn-action">Cómo llegar</a>
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="w-full h-52 bg-slate-100">
+                    <iframe 
+                        class="w-full h-full border-0"
+                        src="https://maps.google.com/maps?q=Centro%20Comercial%20El%20Recreo%20Quito&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        loading="lazy"
+                        title="Mapa C.C. El Recreo">
+                    </iframe>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <span>C.C. El Recreo</span>
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-600 rounded-full border border-indigo-100">Sur</span>
+                        </h2>
+                        <ul class="space-y-3 text-sm text-slate-600 mb-6">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-location-dot text-indigo-500 mt-1 shrink-0"></i>
+                                <span><strong>Dirección:</strong> Av. Pedro Vicente Maldonado S11-122 (Acceso Metro)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-clock text-indigo-500 mt-1 shrink-0"></i>
+                                <span><strong>Horario:</strong> Lun - Dom: 10:00 - 20:00</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-phone text-indigo-500 mt-1 shrink-0"></i>
+                                <span><strong>Teléfono:</strong> (02) 265-1555</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="https://maps.google.com/?q=Centro+Comercial+El+Recreo+Quito" 
+                       target="_blank" 
+                       class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-slate-900 hover:bg-indigo-600 text-white font-medium text-sm rounded-xl transition-colors duration-200 shadow-sm">
+                        <i class="fa-solid fa-diamond-turn-right"></i>
+                        Cómo llegar
+                    </a>
                 </div>
             </article>
 
         </div>
     </main>
+
+
+    <footer class="bg-slate-900 text-slate-400 py-6 text-center text-sm border-t border-slate-800 mt-auto">
+        <p>&copy; 2026 ShoeStyle | Tienda de Zapatos. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
 </html>l
