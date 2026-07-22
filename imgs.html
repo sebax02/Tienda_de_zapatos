@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Galería Simple de Zapatos</title>
+  <style>
+    /* Estilo básico de la barra y la galería */
+    body { font-family: sans-serif; text-align: center; }
+    
+    .menu { margin-bottom: 20px; }
+    .menu button { padding: 10px 15px; margin: 5px; cursor: pointer; }
+
+    .galeria { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    
+    /* Por defecto, cada tarjeta de zapato tiene su categoría */
+    .zapato { width: 180px; border: 1px solid #ccc; padding: 10px; border-radius: 8px; }
+    .zapato img { width: 100%; height: 120px; object-fit: cover; }
+  </style>
+</head>
+<body>
+
+  <h1>Mis Zapatos</h1>
+
+  <!-- 1. Barra de botones -->
+  <div class="menu">
+    <button onclick="mostrar('todos')">Todos</button>
+    <button onclick="mostrar('deportivo')">Deportivos</button>
+    <button onclick="mostrar('formal')">Formales</button>
+  </div>
+
+  <!-- 2. Galería de imágenes directas en HTML -->
+  <div class="galeria">
+    <div class="zapato deportivo">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300" alt="Tenis Red">
+      <p>Tenis Rojo</p>
+    </div>
+
+    <div class="zapato deportivo">
+      <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=300" alt="Tenis Running">
+      <p>Tenis Running</p>
+    </div>
+
+    <div class="zapato formal">
+      <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=300" alt="Mocasín">
+      <p>Mocasín Cuero</p>
+    </div>
+
+    <div class="zapato formal">
+      <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=300" alt="Zapato de vestir">
+      <p>Zapato de Vestir</p>
+    </div>
+  </div>
+
+  <!-- 3. Lógica JavaScript de solo 8 líneas -->
+  <script>
+    function mostrar(categoria) {
+      // Obtener todos los elementos con la clase "zapato"
+      let zapatos = document.querySelectorAll('.zapato');
+
+      zapatos.forEach(zapato => {
+        // Si elegimos "todos" o el zapato tiene la clase seleccionada
+        if (categoria === 'todos' || zapato.classList.contains(categoria)) {
+          zapato.style.display = 'block'; // Mostrar
+        } else {
+          zapato.style.display = 'none';  // Ocultar
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
