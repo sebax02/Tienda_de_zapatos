@@ -1,72 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Galería Simple de Zapatos</title>
-  <style>
-    /* Estilo básico de la barra y la galería */
-    body { font-family: sans-serif; text-align: center; }
-    
-    .menu { margin-bottom: 20px; }
-    .menu button { padding: 10px 15px; margin: 5px; cursor: pointer; }
-
-    .galeria { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-    
-    /* Por defecto, cada tarjeta de zapato tiene su categoría */
-    .zapato { width: 180px; border: 1px solid #ccc; padding: 10px; border-radius: 8px; }
-    .zapato img { width: 100%; height: 120px; object-fit: cover; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Zapatos - ShoeStyle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
 
-  <h1>Mis Zapatos</h1>
 
-  <!-- 1. Barra de botones -->
-  <div class="menu">
-    <button onclick="mostrar('todos')">Todos</button>
-    <button onclick="mostrar('deportivo')">Deportivos</button>
-    <button onclick="mostrar('formal')">Formales</button>
-  </div>
+    <header class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            
 
-  <!-- 2. Galería de imágenes directas en HTML -->
-  <div class="galeria">
-    <div class="zapato deportivo">
-      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300" alt="Tenis Red">
-      <p>Tenis Rojo</p>
-    </div>
+            <h1 class="text-2xl font-extrabold tracking-tight text-indigo-400 flex items-center gap-2">
+                <i class="fa-solid fa-shoe-prints text-indigo-500"></i>
+                <span>ShoeStyle</span>
+            </h1>
 
-    <div class="zapato deportivo">
-      <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=300" alt="Tenis Running">
-      <p>Tenis Running</p>
-    </div>
 
-    <div class="zapato formal">
-      <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=300" alt="Mocasín">
-      <p>Mocasín Cuero</p>
-    </div>
+            <nav class="flex items-center gap-2 md:gap-4 text-sm font-medium">
+                <a href="index.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors duration-200">Inicio</a>
+                <a href="sucursales.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors duration-200">Sucursales</a>
+                <a href="#" class="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/30">Catálogo</a>
+                <a href="contactos.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors duration-200">Contacto</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="zapato formal">
-      <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=300" alt="Zapato de vestir">
-      <p>Zapato de Vestir</p>
-    </div>
-  </div>
 
-  <!-- 3. Lógica JavaScript de solo 8 líneas -->
-  <script>
-    function mostrar(categoria) {
-      // Obtener todos los elementos con la clase "zapato"
-      let zapatos = document.querySelectorAll('.zapato');
+    <main class="flex-grow max-w-6xl mx-auto px-6 py-10 w-full">
+        
 
-      zapatos.forEach(zapato => {
-        // Si elegimos "todos" o el zapato tiene la clase seleccionada
-        if (categoria === 'todos' || zapato.classList.contains(categoria)) {
-          zapato.style.display = 'block'; // Mostrar
-        } else {
-          zapato.style.display = 'none';  // Ocultar
-        }
-      });
-    }
-  </script>
+        <div class="text-center max-w-2xl mx-auto mb-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+                Catálogo de Productos
+            </h2>
+            <p class="text-slate-600 text-base md:text-lg">
+                Filtra por categoría para encontrar el modelo perfecto para ti.
+            </p>
+        </div>
+
+
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+            <button onclick="filtrarCat('todos', this)" 
+                    class="btn-filtro active-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-sm bg-indigo-600 text-white shadow-indigo-600/20">
+                <i class="fa-solid fa-border-all mr-1.5"></i> Todos
+            </button>
+            <button onclick="filtrarCat('deportivo', this)" 
+                    class="btn-filtro px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-sm bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900">
+                <i class="fa-solid fa-person-running mr-1.5"></i> Deportivos
+            </button>
+            <button onclick="filtrarCat('formal', this)" 
+                    class="btn-filtro px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-sm bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900">
+                <i class="fa-solid fa-user-tie mr-1.5"></i> Formales
+            </button>
+        </div>
+
+
+        <div class="galeria grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+
+            <div class="zapato deportivo bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <div class="relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" 
+                         alt="Tenis Red" 
+                         class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <span class="absolute top-3 left-3 bg-red-500/90 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
+                        Deportivo
+                    </span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-1">Tenis Rojo</h3>
+                        <p class="text-xs text-slate-500 mb-4">MÁXIMO CONFORT & DEPORTE</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-3">
+                        <span class="text-indigo-600 font-extrabold text-lg">$89.99</span>
+                        <button class="bg-slate-900 hover:bg-indigo-600 text-white p-2.5 rounded-xl transition-colors duration-200">
+                            <i class="fa-solid fa-cart-shopping text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="zapato deportivo bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <div class="relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400" 
+                         alt="Tenis Running" 
+                         class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <span class="absolute top-3 left-3 bg-red-500/90 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
+                        Deportivo
+                    </span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-1">Tenis Running</h3>
+                        <p class="text-xs text-slate-500 mb-4">LIGEROS Y TRANSPIRABLES</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-3">
+                        <span class="text-indigo-600 font-extrabold text-lg">$75.50</span>
+                        <button class="bg-slate-900 hover:bg-indigo-600 text-white p-2.5 rounded-xl transition-colors duration-200">
+                            <i class="fa-solid fa-cart-shopping text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="zapato formal bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <div class="relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400" 
+                         alt="Mocasín" 
+                         class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <span class="absolute top-3 left-3 bg-slate-800/90 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
+                        Formal
+                    </span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-1">Mocasín Cuero</h3>
+                        <p class="text-xs text-slate-500 mb-4">CUERO GENUINO ARTESANAL</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-3">
+                        <span class="text-indigo-600 font-extrabold text-lg">$110.00</span>
+                        <button class="bg-slate-900 hover:bg-indigo-600 text-white p-2.5 rounded-xl transition-colors duration-200">
+                            <i class="fa-solid fa-cart-shopping text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="zapato formal bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <div class="relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=400" 
+                         alt="Zapato de vestir" 
+                         class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <span class="absolute top-3 left-3 bg-slate-800/90 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
+                        Formal
+                    </span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-1">Zapato de Vestir</h3>
+                        <p class="text-xs text-slate-500 mb-4">ELEGANCIA CLÁSICA</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-3">
+                        <span class="text-indigo-600 font-extrabold text-lg">$125.00</span>
+                        <button class="bg-slate-900 hover:bg-indigo-600 text-white p-2.5 rounded-xl transition-colors duration-200">
+                            <i class="fa-solid fa-cart-shopping text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <footer class="bg-slate-900 text-slate-400 py-6 text-center text-sm border-t border-slate-800 mt-auto">
+        <p>&copy; 2026 ShoeStyle | Tienda de Zapatos. Todos los derechos reservados.</p>
+    </footer>
+
 
 </body>
 </html>
