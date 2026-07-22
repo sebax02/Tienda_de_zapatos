@@ -1,0 +1,177 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eaf6fd;
+    color:#333;
+}
+
+/* HEADER */
+
+header{
+    background:#0066cc;
+    color:white;
+    padding:20px 0;
+    box-shadow:0 3px 8px rgba(0,0,0,.2);
+}
+
+.contenedor{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+header h1{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+nav{
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover,
+nav .activo{
+    color:#ffe600;
+}
+
+/* CONTENIDO */
+
+main{
+    display:flex;
+    gap:40px;
+    margin:40px auto;
+    flex-wrap:wrap;
+}
+
+.info{
+    flex:1;
+    min-width:280px;
+}
+
+.info h2,
+.info h3{
+    color:#0066cc;
+    margin-bottom:15px;
+}
+
+.info p{
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+/* FORMULARIO */
+
+.formulario{
+    flex:1;
+    min-width:320px;
+
+    background:white;
+    padding:30px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.formulario h2{
+    text-align:center;
+    color:#0066cc;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+}
+
+textarea{
+    resize:none;
+}
+
+.radio label{
+    display:block;
+    font-weight:normal;
+    margin:8px 0;
+}
+
+.radio input{
+    width:auto;
+}
+
+.check{
+    margin-top:20px;
+}
+
+.check input{
+    width:auto;
+}
+
+.botones{
+    display:flex;
+    justify-content:space-between;
+    margin-top:25px;
+}
+
+.botones input{
+    width:48%;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    color:white;
+    transition:.3s;
+}
+
+.botones input[type="submit"]{
+    background:#0066cc;
+}
+
+.botones input[type="reset"]{
+    background:#888;
+}
+
+.botones input:hover{
+    transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    main{
+        flex-direction:column;
+    }
+
+    .botones{
+        flex-direction:column;
+    }
+
+    .botones input{
+        width:100%;
+        margin-top:10px;
+    }
+
+}
