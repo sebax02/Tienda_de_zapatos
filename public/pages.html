@@ -93,14 +93,13 @@
 </head>
 <body>
 
-  <h1>Catálogo de Zapatos</h1>
+  <h1>Catálogo Shoes Style</h1>
 
   <nav class="navbar">
     <button class="nav-btn active" onclick="filtrarZapatos('todos', this)">Todos</button>
     <button class="nav-btn" onclick="filtrarZapatos('deportivos', this)">Deportivos</button>
     <button class="nav-btn" onclick="filtrarZapatos('formales', this)">Formales</button>
     <button class="nav-btn" onclick="filtrarZapatos('casuales', this)">Casuales</button>
-    <button class="nav-btn" onclick="filtrarZapatos('botas', this)">Botas</button>
   </nav>
 
   <section class="gallery" id="gallery"></section>
@@ -109,14 +108,13 @@
     
     const zapatos = [
       { id: 1, categoria: 'deportivos', titulo: 'Deportivo Running', img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500' },
-      { id: 2, categoria: 'deportivos', titulo: 'Sneakers Pro', img: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500' },
+      { id: 2, categoria: 'deportivos', titulo: 'Sneaker', img: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500' },
       { id: 3, categoria: 'deportivos', titulo: 'Calzado Atletismo', img: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500' },
       { id: 4, categoria: 'formales', titulo: 'Mocasín de Cuero', img: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=500' },
       { id: 5, categoria: 'formales', titulo: 'Zapato de Vestir', img: 'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=500' },
       { id: 6, categoria: 'casuales', titulo: 'Zapato Lona Urbano', img: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500' },
       { id: 7, categoria: 'casuales', titulo: 'Sneaker Blanco', img: 'https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500' },
-      { id: 8, categoria: 'botas', titulo: 'Bota de Cuero', img: 'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=500' },
-      { id: 9, categoria: 'botas', titulo: 'Bota Todo Terreno', img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=500' }
+
     ];
 
     const gallery = document.getElementById('gallery');
